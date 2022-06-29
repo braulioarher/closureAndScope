@@ -17,3 +17,22 @@ const otherCount = buildCount(10);            //creanos una nueva intancia al cl
 otherCount(); //11
 otherCount(); //12
 otherCount(); //13              //Como se observa regresa diferentes valores dependiendo de la instancia a la que haga referencia
+
+const myGlobal = 0;
+
+function myFunction() {
+    const myNumber = 1;
+    console.log(myGlobal);
+
+    function parent () {    //funcion interna
+        const inner = 2;
+        console.log(myNumber, myGlobal);
+
+        function child (){
+            console.log(inner, myNumber, myGlobal); //puede acceder a las funciones pasadas y al global
+        }
+        return child();
+    }
+    return parent();
+}
+ myFunction()

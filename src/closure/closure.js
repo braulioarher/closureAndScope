@@ -1,3 +1,6 @@
+//Un closure permite acceder al ambito de una funcion exterior desde una funcion interior
+//En JavaScript los closures se crean cada vez que una funcion es creada
+
 const moneyBox = () => {
     var savedCoins = 0;                //esta variable solo existira dentro de este scope
     const countCoins = (coins) => {
@@ -11,3 +14,4 @@ let myMoneyBox = moneyBox();                    //al momento de hacer esta asign
 
 myMoneyBox(4);
 myMoneyBox(10);
+
